@@ -8,4 +8,5 @@
 	<p>BT02 S04 Game Design Document (GDD)</p>
 	<p>BT03 Setting Up a GitHub “Repo”</p>
 	<p>BT04 Creating & Deleting Landscapes</p>
+	<p>BT05 Landscape Setup & Scaling</p>
 </blockquote>
