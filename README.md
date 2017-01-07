@@ -10,4 +10,5 @@
 	<p>BT04 Creating & Deleting Landscapes</p>
 	<p>BT05 Landscape Setup & Scaling</p>
 	<p>BT06 A Landscaping Process</p>
+	<p>BT07 Upgrading Engine Version</p>
 </blockquote>
