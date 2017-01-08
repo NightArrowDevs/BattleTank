@@ -15,4 +15,6 @@
 	<p>BT10 More Landscaping Tools</p>
 	<p>BT11 Tank Control System</p>
 	<p>BT12 Actors from Multiple Meshes</p>
+	<p>BT13 Configuring a Tank</p>
+	<p>BT14 3rd Person Camera Control</p>
 </blockquote>
