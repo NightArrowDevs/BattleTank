@@ -17,4 +17,5 @@
 	<p>BT12 Actors from Multiple Meshes</p>
 	<p>BT13 Configuring a Tank</p>
 	<p>BT14 3rd Person Camera Control</p>
+	<p>BT15 Fixing 3rd Person Camera Rotation</p>
 </blockquote>
