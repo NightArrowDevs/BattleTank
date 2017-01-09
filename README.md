@@ -22,4 +22,5 @@
 	<p>BT17 Main Menu Screens</p>
 	<p>BT18 UI Scale Box, Buttons & Mouse</p>
 	<p>BT19 Controller Ready Navigation</p>
+	<p>BT20 Trial Packaging Your Game</p>
 </blockquote>
