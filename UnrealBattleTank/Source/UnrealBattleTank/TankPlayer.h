@@ -19,6 +19,6 @@ public:
 	// ATank* is the actor/pawn/character
 	// Example, header file name is "Player.h" then it is "APlayer*"
 	
-	
+	virtual void BeginPlay() override;
 	
 };
