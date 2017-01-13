@@ -15,10 +15,26 @@ void AAITank::BeginPlay()
 	{
 		UE_LOG(LogTemp, Error, TEXT("Can't get ai controlled tank"));
 	}
+	
+	auto PlayerController = GetPlayerController();
+	if (PlayerController)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Getting player controller of %s"), *(PlayerController->GetName()));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Can't get player controller"));
+	}
 }
 
 ATank* AAITank::GetAIControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
+}
+
+ATank* AAITank::GetPlayerController() const
+{
+	auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
+	return Cast<ATank>(PlayerPawn);
 }
 

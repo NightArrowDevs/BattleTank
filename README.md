@@ -25,5 +25,6 @@
 	<p>BT20 Trial Packaging Your Game</p>
 	<p>BT21 Delegating to Components</p>
 	<p>BT22 Using virtual and override</p>
-	<p>BT23 Get the Player Controller with C++</p>
+	<p>BT23 Creating an AI Controller Class</p>
+	<p>BT24 Get the Player Controller with C++</p>
 </blockquote>
