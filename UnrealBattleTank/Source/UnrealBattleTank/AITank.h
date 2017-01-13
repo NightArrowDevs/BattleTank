@@ -15,6 +15,10 @@ class UNREALBATTLETANK_API AAITank : public AAIController
 	GENERATED_BODY()
 	
 private:
+	virtual void Tick(float DeltaSeconds) override;
+
+	void AimTowardsCrosshair();
+
 	ATank* GetAIControlledTank() const;
 
 	virtual void BeginPlay() override;

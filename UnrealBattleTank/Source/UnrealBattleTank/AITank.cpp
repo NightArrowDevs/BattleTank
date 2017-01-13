@@ -3,6 +3,13 @@
 #include "UnrealBattleTank.h"
 #include "AITank.h"
 
+void AAITank::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	UE_LOG(LogTemp, Warning, TEXT("Test tick"));
+	AimTowardsCrosshair();
+}
+
 void AAITank::BeginPlay()
 {
 	Super::BeginPlay();
@@ -36,5 +43,10 @@ ATank* AAITank::GetPlayerController() const
 {
 	auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
 	return Cast<ATank>(PlayerPawn);
+}
+
+void AAITank::AimTowardsCrosshair()
+{
+
 }
 

@@ -27,4 +27,5 @@
 	<p>BT22 Using virtual and override</p>
 	<p>BT23 Creating an AI Controller Class</p>
 	<p>BT24 Get the Player Controller with C++</p>
+	<p>BT25 Add Tick() to PlayerController</p>
 </blockquote>
