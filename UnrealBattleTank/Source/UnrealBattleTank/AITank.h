@@ -24,4 +24,6 @@ private:
 	virtual void BeginPlay() override;
 
 	ATank* GetPlayerController() const;
+
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
 };
