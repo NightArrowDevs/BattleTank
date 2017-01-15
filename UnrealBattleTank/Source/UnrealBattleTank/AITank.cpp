@@ -3,12 +3,6 @@
 #include "UnrealBattleTank.h"
 #include "AITank.h"
 
-void AAITank::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	AimTowardsCrosshair();
-}
-
 void AAITank::BeginPlay()
 {
 	Super::BeginPlay();
@@ -44,23 +38,5 @@ ATank* AAITank::GetPlayerController() const
 	return Cast<ATank>(PlayerPawn);
 }
 
-void AAITank::AimTowardsCrosshair()
-{
-	FVector HitLocation; // OUT parameter
-
-	if (GetSightRayHitLocation(HitLocation))
-	{
-		// Get world location if linetrace through crosshair
-		UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s"), *HitLocation.ToString());
-		// If it hits the landscape
-			// Tell controlled tank to aim at this point
-	}
-}
-
-bool AAITank::GetSightRayHitLocation(FVector& HitLocation) const
-{
-	HitLocation = FVector(1.0);
-	return true;
-}
 
 

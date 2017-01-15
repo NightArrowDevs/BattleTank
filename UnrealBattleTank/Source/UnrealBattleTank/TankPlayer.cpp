@@ -3,6 +3,12 @@
 #include "UnrealBattleTank.h"
 #include "TankPlayer.h"
 
+void ATankPlayer::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AimTowardsCrosshair();
+}
+
 void ATankPlayer::BeginPlay()
 {
 	Super::BeginPlay();
@@ -19,12 +25,33 @@ void ATankPlayer::BeginPlay()
 
 }
 
-
-
 ATank* ATankPlayer::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn()); 
 	// Goes to the actor/pawn/character and gets the actor/pawn/character
+}
+
+void ATankPlayer::AimTowardsCrosshair()
+{
+	FVector HitLocation; // OUT parameter
+
+	if (GetSightRayHitLocation(HitLocation))
+	{
+		// Get world location if line trace through cross hair
+		UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *HitLocation.ToString());
+		// If it hits the landscape
+		// Tell controlled tank to aim at this point
+	}
+}
+
+bool ATankPlayer::GetSightRayHitLocation(FVector& HitLocation) const
+{
+	int32 ViewPortSizeX, ViewPortSizeY;
+	GetViewportSize(ViewPortSizeX, ViewPortSizeY);
+	auto ScreenLocation = FVector2D(ViewPortSizeX * CrossHairXLocation, ViewPortSizeY * CrossHairYLocation);
+	UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *ScreenLocation.ToString());
+
+	return true;
 }
 
 
