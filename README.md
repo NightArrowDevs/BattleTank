@@ -30,4 +30,5 @@
 	<p>BT25 Add Tick() to PlayerController</p>
 	<p>BT26 Creating an Out Parameter Method</p>
 	<p>BT27 Finding Screen Pixel Coordinates</p>
+	<p>BT28 Using DeprojectScreenToWorld</p>
 </blockquote>
