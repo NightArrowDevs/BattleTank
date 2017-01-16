@@ -52,7 +52,12 @@ bool ATankPlayer::GetSightRayHitLocation(FVector& HitLocation) const
 	FVector LookDirection;
 	if (GetLookDirection(ScreenLocation, LookDirection))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *LookDirection.ToString());
+		float LineTraceRange = 10000;
+		FVector HitLocation;
+		if (GetLookVectorHitLocation(LookDirection, LineTraceRange, HitLocation))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *HitLocation.ToString());
+		}
 	}
 
 	return true;
@@ -62,5 +67,25 @@ bool ATankPlayer::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirect
 {
 	FVector WorldLocation;
 	return DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, WorldLocation, LookDirection);
+}
+
+bool ATankPlayer::GetLookVectorHitLocation(FVector LookDirection, float LineTraceRange, FVector& HitLocation) const
+{
+	FCollisionQueryParams TraceParam;
+	FCollisionResponseParams ResponeParams;
+
+	FHitResult LineTraceHit;
+	FVector LineTraceEnd = LookDirection * LineTraceRange;
+	GetWorld()->LineTraceSingleByChannel(
+		LineTraceHit,
+		LookDirection,
+		LineTraceEnd,
+		ECollisionChannel::ECC_Visibility,
+		TraceParam,
+		ResponeParams
+		);
+	
+	HitLocation = LineTraceHit.Location;
+	return true;
 }
 

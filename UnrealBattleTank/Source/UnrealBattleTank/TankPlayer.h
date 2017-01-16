@@ -34,4 +34,6 @@ public:
 	float CrossHairYLocation = 0.33333f;
 	
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
+	bool GetLookVectorHitLocation(FVector LookDirection, float LineTraceRange, FVector& HitLocation) const;
 };
