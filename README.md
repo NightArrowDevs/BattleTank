@@ -31,4 +31,5 @@
 	<p>BT26 Creating an Out Parameter Method</p>
 	<p>BT27 Finding Screen Pixel Coordinates</p>
 	<p>BT28 Using DeprojectScreenToWorld</p>
+	<p>BT29 Using LineTraceSingleByChannel()</p>
 </blockquote>
