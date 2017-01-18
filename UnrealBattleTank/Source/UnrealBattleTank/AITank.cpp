@@ -3,6 +3,12 @@
 #include "UnrealBattleTank.h"
 #include "AITank.h"
 
+void AAITank::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	GetAIControlledTank()->AimAt(GetPlayerController()->GetActorLocation());
+}
+
 void AAITank::BeginPlay()
 {
 	Super::BeginPlay();

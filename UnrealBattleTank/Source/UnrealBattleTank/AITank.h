@@ -20,4 +20,6 @@ private:
 	virtual void BeginPlay() override;
 
 	ATank* GetPlayerController() const;
+
+	virtual void Tick(float DeltaSeconds) override;
 };

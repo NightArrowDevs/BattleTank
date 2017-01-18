@@ -32,4 +32,5 @@
 	<p>BT27 Finding Screen Pixel Coordinates</p>
 	<p>BT28 Using DeprojectScreenToWorld</p>
 	<p>BT29 Using LineTraceSingleByChannel()</p>
+	<p>BT30 Unify Player & AI Aiming</p>
 </blockquote>
