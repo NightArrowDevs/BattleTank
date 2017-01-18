@@ -2,8 +2,9 @@
 
 #pragma once
 
+#include "TankAimingComponent.h" // Include component
 #include "GameFramework/Pawn.h"
-#include "Tank.generated.h"
+#include "Tank.generated.h" // Paste new includes above!!
 
 UCLASS()
 class UNREALBATTLETANK_API ATank : public APawn
@@ -24,6 +25,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+
+protected:
+	UTankAimingComponent* TankAimingComponent = nullptr; // Creating the component 
 
 	
 	

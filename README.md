@@ -33,4 +33,5 @@
 	<p>BT28 Using DeprojectScreenToWorld</p>
 	<p>BT29 Using LineTraceSingleByChannel()</p>
 	<p>BT30 Unify Player & AI Aiming</p>
+	<p>BT31 Create Default Sub Objects in C++</p>
 </blockquote>
