@@ -23,4 +23,7 @@ public:
 
 	void AimLogging(FVector HitLocation, FString OurTankName);
 	
+	UStaticMeshComponent* Barrel = nullptr;
+
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 };

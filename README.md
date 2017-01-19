@@ -34,4 +34,5 @@
 	<p>BT29 Using LineTraceSingleByChannel()</p>
 	<p>BT30 Unify Player & AI Aiming</p>
 	<p>BT31 Create Default Sub Objects in C++</p>
+	<p>BT32 BlueprintCallable()</p>
 </blockquote>
