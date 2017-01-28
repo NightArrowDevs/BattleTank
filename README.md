@@ -38,4 +38,7 @@
 	<p>BT33 Predict Projectile Landing Point</p>
 	<p>BT34 Predict Projectile Landing Point</p>
 	<p>BT35 Using FRotators in Unreal</p>
+	<p>BT36 The C++ Compilation Process</p>
+	<p>BT37 Using Forward Declarations</p>
+	<p>BT38 BlueprintSpawnableComponent()</p>
 </blockquote>

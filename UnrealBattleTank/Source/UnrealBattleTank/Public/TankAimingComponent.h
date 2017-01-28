@@ -5,8 +5,9 @@
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
 
+class UTankBarrel;
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class UNREALBATTLETANK_API UTankAimingComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -23,9 +24,9 @@ public:
 
 	void AimLogging(FVector HitLocation, FString OurTankName, float LaunchSpeed);
 	
-	UStaticMeshComponent* Barrel = nullptr;
+	UTankBarrel* Barrel = nullptr;
 
 	void BarrelRotation(FVector AimDirection);
 
-	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelReference(UTankBarrel* BarrelToSet);
 };

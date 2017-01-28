@@ -2,9 +2,12 @@
 
 #pragma once
 
-#include "TankAimingComponent.h" // Include component
+#include "TankAimingComponent.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h" // Paste new includes above!!
+
+class UTankBarrel;
+
 
 UCLASS()
 class UNREALBATTLETANK_API ATank : public APawn
@@ -27,14 +30,11 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 	UPROPERTY(EditAnywhere, Category = Fire)
 	float LaunchSpeed = 100000; // Setup launch speed of projectile firing (1000 m/s)
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr; // Creating the component 
-
-	
-	
 };

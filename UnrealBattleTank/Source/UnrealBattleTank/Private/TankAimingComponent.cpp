@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UnrealBattleTank.h"
+#include "TankBarrel.h"
 #include "TankAimingComponent.h"
-
 
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
@@ -60,12 +60,14 @@ void UTankAimingComponent::AimLogging(FVector HitLocation, FString OurTankName, 
 
 void UTankAimingComponent::BarrelRotation(FVector AimDirection)
 {
-	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
-	auto AimAsRotator = AimDirection.Rotation();
-	auto DeltaRotator = AimAsRotator - BarrelRotator;
+	auto BarrelRotator = Barrel->GetForwardVector().Rotation(); // Gets the standard rotation of barrel
+	auto AimAsRotator = AimDirection.Rotation(); // Gets the aim rotation
+	auto DeltaRotator = AimAsRotator - BarrelRotator; // Aim - Delta = Delta 
+
+	Barrel->Elevate(5.f);
 }
 
-void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
+void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }

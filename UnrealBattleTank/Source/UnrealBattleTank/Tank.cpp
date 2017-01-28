@@ -3,7 +3,6 @@
 #include "UnrealBattleTank.h"
 #include "Tank.h"
 
-
 // Sets default values
 ATank::ATank()
 {
@@ -41,7 +40,7 @@ void ATank::AimAt(FVector HitLocation)
 	TankAimingComponent->AimLogging(HitLocation, OurTankName, LaunchSpeed); // Setting the component up
 }
 
-void ATank::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
+void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	TankAimingComponent->SetBarrelReference(BarrelToSet);
 }
