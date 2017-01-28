@@ -35,7 +35,27 @@ void UTankAimingComponent::TickComponent( float DeltaTime, ELevelTick TickType, 
 
 void UTankAimingComponent::AimLogging(FVector HitLocation, FString OurTankName, float LaunchSpeed)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Firing at %f"), LaunchSpeed);
+	FVector OutLaunchVelocity;
+	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile")); // Gets to location of the socket
+	const TArray<AActor*> ActorsToIgnore;
+
+	
+	if (UGameplayStatics::SuggestProjectileVelocity(
+		this,
+		OutLaunchVelocity, // Use the out parameter
+		StartLocation, // Start location of the projectile
+		HitLocation, // End location of the projectile, in this case the hit location
+		LaunchSpeed, // Launch speed of the projectile
+		false, // True = High Arc, False = Low Arc
+		0.f, // Not important
+		0.f, // Not important
+		ESuggestProjVelocityTraceOption::DoNotTrace // Not important
+		)
+		)
+	{
+		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
+		UE_LOG(LogTemp, Warning, TEXT("Firing at %s"), *AimDirection.ToString());
+	}
 }
 
 void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
