@@ -29,6 +29,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
+	UPROPERTY(EditAnywhere, Category = Fire)
+	float LaunchSpeed = 100000; // Setup launch speed of projectile firing (1000 m/s)
+
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr; // Creating the component 
 

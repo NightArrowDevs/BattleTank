@@ -38,7 +38,7 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 void ATank::AimAt(FVector HitLocation)
 {
 	FString OurTankName = GetName();
-	TankAimingComponent->AimLogging(HitLocation, OurTankName);
+	TankAimingComponent->AimLogging(HitLocation, OurTankName, LaunchSpeed); // Setting the component up
 }
 
 void ATank::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
