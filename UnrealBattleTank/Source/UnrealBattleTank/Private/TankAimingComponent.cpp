@@ -54,8 +54,15 @@ void UTankAimingComponent::AimLogging(FVector HitLocation, FString OurTankName, 
 		)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
-		UE_LOG(LogTemp, Warning, TEXT("Firing at %s"), *AimDirection.ToString());
+		BarrelRotation(AimDirection);
 	}
+}
+
+void UTankAimingComponent::BarrelRotation(FVector AimDirection)
+{
+	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
+	auto AimAsRotator = AimDirection.Rotation();
+	auto DeltaRotator = AimAsRotator - BarrelRotator;
 }
 
 void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent* BarrelToSet)

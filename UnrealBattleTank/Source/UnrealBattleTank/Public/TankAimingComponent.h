@@ -25,5 +25,7 @@ public:
 	
 	UStaticMeshComponent* Barrel = nullptr;
 
+	void BarrelRotation(FVector AimDirection);
+
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 };
