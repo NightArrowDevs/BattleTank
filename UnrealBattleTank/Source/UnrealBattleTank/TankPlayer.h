@@ -2,10 +2,10 @@
 
 #pragma once
 
-#include "Tank.h" // Tank.h is the C++ actor/pawn/character header file
 #include "GameFramework/PlayerController.h"
 #include "TankPlayer.generated.h"
 
+class ATank;
 /**
  * 
  */

@@ -14,7 +14,8 @@ class UNREALBATTLETANK_API UTankBarrel : public UStaticMeshComponent
 	GENERATED_BODY()
 
 public:
-	void Elevate(float DegreePerSec);
+	// -1 is down, +1 is up
+	void Elevate(float RelativeSpeed); // TODO change name to "RelativeSpeed"
 	
 private:
 	UPROPERTY(EditAnywhere, Category = Setup)

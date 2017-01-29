@@ -35,10 +35,13 @@
 	<p>BT30 Unify Player & AI Aiming</p>
 	<p>BT31 Create Default Sub Objects in C++</p>
 	<p>BT32 BlueprintCallable()</p>
-	<p>BT33 Predict Projectile Landing Point</p>
+	<p>BT33 SuggestProjectileVelocity()</p>
 	<p>BT34 Predict Projectile Landing Point</p>
 	<p>BT35 Using FRotators in Unreal</p>
 	<p>BT36 The C++ Compilation Process</p>
 	<p>BT37 Using Forward Declarations</p>
 	<p>BT38 BlueprintSpawnableComponent()</p>
+	<p>BT39 Review Our Execution Flow</p>
+	<p>BT40 How to Report Bugs</p>
+	<p>BT41 Using Clamp() to Limit Values</p>
 </blockquote>
