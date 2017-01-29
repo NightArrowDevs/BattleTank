@@ -2,6 +2,7 @@
 
 #include "UnrealBattleTank.h"
 #include "TankBarrel.h"
+#include "TankTurret.h"
 #include "TankAimingComponent.h"
 
 // Sets default values for this component's properties
@@ -55,7 +56,17 @@ void UTankAimingComponent::AimLogging(FVector HitLocation, FString OurTankName, 
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		BarrelRotation(AimDirection);
+		TurretRotation(AimDirection);
 	}
+}
+
+void UTankAimingComponent::TurretRotation(FVector AimDirection)
+{
+	auto TurretRotator = Turret->GetForwardVector().Rotation();
+	auto AimAsRotatorTurret = AimDirection.Rotation();
+	auto DeltaRotatorTurret = AimAsRotatorTurret - TurretRotator;
+
+	Turret->RotatingTurret(DeltaRotatorTurret.Yaw);
 }
 
 void UTankAimingComponent::BarrelRotation(FVector AimDirection)
@@ -70,5 +81,10 @@ void UTankAimingComponent::BarrelRotation(FVector AimDirection)
 void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	Barrel = BarrelToSet;
+}
+
+void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
+{
+	Turret = TurretToSet;
 }
 
