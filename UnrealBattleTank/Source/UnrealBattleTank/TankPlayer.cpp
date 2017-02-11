@@ -22,13 +22,14 @@ void ATankPlayer::BeginPlay()
 	else
 	{
 		UE_LOG(LogTemp, Error, TEXT("Can't get controlled tank"));
+		return;
 	}
 
 }
 
 ATank* ATankPlayer::GetControlledTank() const
 {
-	return Cast<ATank>(GetPawn()); 
+	return Cast<ATank>(GetPawn());
 	// Goes to the actor/pawn/character and gets the actor/pawn/character
 }
 

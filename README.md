@@ -46,4 +46,5 @@
 	<p>BT41 Using Clamp() to Limit Values</p>
 	<p>BT42 CHALLENGE - Turret Rotation</p>
 	<p>BT43 CHALLENGE - Turret Rotation Pt.2</p>
+	<p>BT44 Upgrading to Unreal 4.12</p>
 </blockquote>
