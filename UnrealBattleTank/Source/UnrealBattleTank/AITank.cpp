@@ -7,43 +7,14 @@
 void AAITank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	GetAIControlledTank()->AimAt(GetPlayerController()->GetActorLocation());
-}
-
-void AAITank::BeginPlay()
-{
-	Super::BeginPlay();
-	auto AITank = GetAIControlledTank();
-	if (AITank)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Getting ai controlled tank of %s"),*(AITank->GetName()));
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Can't get ai controlled tank"));
-	}
-	
-	auto PlayerController = GetPlayerController();
-	if (PlayerController)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Getting player controller of %s"), *(PlayerController->GetName()));
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Can't get player controller"));
-	}
-}
-
-ATank* AAITank::GetAIControlledTank() const
-{
-	return Cast<ATank>(GetPawn());
-}
-
-ATank* AAITank::GetPlayerController() const
-{
+	auto AITank = Cast<ATank>(GetPawn());
 	auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
-	return Cast<ATank>(PlayerPawn);
+	auto PlayerController = Cast<ATank>(PlayerPawn);
+	AITank->AimAt(PlayerController->GetActorLocation());
+	AITank->Fire();
 }
+
+
 
 
 

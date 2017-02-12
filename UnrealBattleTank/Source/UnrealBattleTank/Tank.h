@@ -44,6 +44,8 @@ public:
 
 	UTankBarrel* Barrel = nullptr;
 
+	float ReloadTime = 3;
+	double LastFireTime = 0;
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr; // Creating the component 
 };

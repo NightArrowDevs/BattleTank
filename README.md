@@ -51,4 +51,5 @@
 	<p>BT46 Working Round Awkward Bugs</p>
 	<p>BT47 Using SpawnActor<>() to Spawn</p>
 	<p>BT48 Projectile Movement Components</p>
+	<p>BT49 Making AI Tanks Fire</p>
 </blockquote>
