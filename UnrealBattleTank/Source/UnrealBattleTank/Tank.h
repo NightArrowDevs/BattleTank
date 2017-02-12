@@ -8,7 +8,7 @@
 class UTankBarrel;
 class UTankAimingComponent;
 class UTankTurret;
-
+class AProjectile;
 
 UCLASS()
 class UNREALBATTLETANK_API ATank : public APawn
@@ -38,6 +38,11 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = Fire)
 	float LaunchSpeed = 100000; // Setup launch speed of projectile firing (1000 m/s)
+
+	UPROPERTY(EditAnywhere, Category = Setup)
+	TSubclassOf<AProjectile> ProjectileBlueprint; // Will get the projectile blueprint
+
+	UTankBarrel* Barrel = nullptr;
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr; // Creating the component 
