@@ -50,4 +50,5 @@
 	<p>BT45 Upgrading to Unreal 4.12</p>
 	<p>BT46 Working Round Awkward Bugs</p>
 	<p>BT47 Using SpawnActor<>() to Spawn</p>
+	<p>BT48 Projectile Movement Components</p>
 </blockquote>
