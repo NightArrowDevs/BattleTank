@@ -3,6 +3,7 @@
 #include "UnrealBattleTank.h"
 #include "TankBarrel.h"
 #include "TankTurret.h"
+#include "TankTrack.h"
 #include "TankAimingComponent.h"
 
 // Sets default values for this component's properties
@@ -88,3 +89,7 @@ void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
 	Turret = TurretToSet;
 }
 
+void UTankAimingComponent::SetTrackReference(UTankTrack* TrackToSet)
+{
+	Track = TrackToSet;
+}

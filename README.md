@@ -54,4 +54,5 @@
 	<p>BT49 Making AI Tanks Fire</p>
 	<p>BT50 EditAnywhere vs EditDefaultsOnly</p>
 	<p>BT51 Adding a Quit Button</p>
+	<p>BT52 Setup Track Throttles</p>
 </blockquote>
