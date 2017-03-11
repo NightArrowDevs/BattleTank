@@ -15,6 +15,9 @@ class UNREALBATTLETANK_API UTankTrack : public UStaticMeshComponent
 public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void ThrottleRequest(float Throttle);
+
+	UPROPERTY(EditAnywhere)
+	float MaxDrivingForce = 400000; // Force of a tank
 	
 	
 };
