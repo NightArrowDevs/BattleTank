@@ -28,7 +28,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Firing)
 	void Fire();
 
+	int GetRoundsleft() const; // 
+
 protected:
+	UPROPERTY(BlueprintReadOnly)
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
 	UPROPERTY(BlueprintReadOnly)
@@ -57,4 +60,6 @@ private:
 	UTankBarrel* Barrel = nullptr;
 	
 	double LastFireTime = 0;
+
+	int Roundsleft = 3; //
 };

@@ -65,3 +65,8 @@ void ATank::Fire()
 		LastFireTime = FPlatformTime::Seconds();
 	}
 }
+
+int ATank::GetRoundsleft() const //
+{
+	return Roundsleft;
+}

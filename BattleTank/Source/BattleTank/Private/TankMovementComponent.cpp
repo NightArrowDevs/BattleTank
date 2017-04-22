@@ -4,6 +4,19 @@
 #include "TankMovementComponent.h"
 #include "TankTrack.h"
 
+void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed)
+{
+	// No need to call Super as we're replacing the functionality
+	auto TankForward = GetOwner()->GetActorForwardVector().GetSafeNormal(); // Tank is facing at
+	auto AIForwardIntention = MoveVelocity.GetSafeNormal(); // Tank wants to go there
+	auto ForwardThrow = FVector::DotProduct(TankForward, AIForwardIntention); // Dot between TankForward and AIForwardIntention
+	auto RightThrow = FVector::CrossProduct(TankForward, AIForwardIntention).Z; // Cross between TankForward and AIForwardIntention, gets Z vector
+
+	IntendMoveRight(RightThrow);
+	IntendMoveForward(ForwardThrow); // Move forward to actor
+}
+
+
 
 void UTankMovementComponent::Initialise(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet)
 {
@@ -17,7 +30,12 @@ void UTankMovementComponent::Initialise(UTankTrack* LeftTrackToSet, UTankTrack* 
 
 void UTankMovementComponent::IntendMoveForward(float Throw)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Intend move forward throw: %f"), Throw);
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(Throw);
+}
+
+void UTankMovementComponent::IntendMoveRight(float Throw)
+{
+	LeftTrack->SetThrottle(Throw);
+	RightTrack->SetThrottle(-Throw);
 }
